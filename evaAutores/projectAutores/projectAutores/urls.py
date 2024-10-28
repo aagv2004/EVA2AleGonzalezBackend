@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from appAutores.views import listaAutores
+from appAutores.views import listaAutores, agregarAutores, actualizarAutores, eliminarAutores
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', listaAutores, name='lista-autores'),
+    path('agregarAutores/', agregarAutores, name='agregar-autores'),
+    path('actualizarAutores/<int:id>', actualizarAutores, name='actualizar-autores'),
+    path('eliminarAutores/<int:id>', eliminarAutores, name='eliminar-autores')
     
 ]
